@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talha Jubayer — Product Designer & Frontend Developer</title>
+<meta name="description" content="Personal portfolio of Talha Jubayer, Product Designer & Frontend Developer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231B1530'/%3E%3Ctext x='50' y='66' font-size='52' fill='%23E8A33D' text-anchor='middle' font-family='monospace'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!--
+  ============================================================
+  FILE STRUCTURE:
+    index.html   -> পেজের কাঠামো (এই ফাইল)
+    style.css    -> সব ডিজাইন/কালার/লেআউট এখানে
+    script.js    -> মেনু, ফিল্টার, স্লাইডার, ফর্ম ইত্যাদির লজিক
+    contact.php  -> (ঐচ্ছিক) ফর্ম সাবমিট ইমেইলে পাঠানোর জন্য,
+                    PHP হোস্টিং এ আপলোড করলে ব্যবহার করতে পারবেন
+                    (ফাইলের ভেতরে নির্দেশনা দেওয়া আছে)
+
+  EDIT GUIDE — এই কমেন্টগুলো খুঁজে নিজের তথ্য বসান:
+  1) নাম/পদবি/বায়ো        -> সার্চ করুন: "Talha Jubayer"
+  2) ইমেইল/ফোন/লোকেশন      -> সার্চ করুন: "EDIT-CONTACT"
+  3) সোশ্যাল লিংক           -> সার্চ করুন: "EDIT-SOCIAL"
+  4) পোর্টফোলিও প্রজেক্ট     -> সার্চ করুন: "EDIT-PROJECT"
+  5) স্কিল % পরিবর্তন        -> সার্চ করুন: "EDIT-SKILL" (এই ফাইলেই আছে)
+  6) ছবি বসাতে চাইলে .avatar-block / .cover এর background বদলে
+     <img> ট্যাগ ব্যবহার করুন, অথবা style.css এ background-image দিন।
+  7) রং/ফন্ট বদলাতে style.css এর শুরুতে :root{ } এর ভেতরের
+     ভ্যারিয়েবলগুলো (--gold, --mint, --font-display ইত্যাদি) বদলান।
+  ============================================================
+-->
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#home" class="logo"><span class="tag"><img src="profile-photo.jpg" alt="Talha Jubayer" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20400%27%3E%0A%3Crect%20width%3D%27400%27%20height%3D%27400%27%20fill%3D%27%232B2249%27/%3E%0A%3Crect%20x%3D%2714%27%20y%3D%2714%27%20width%3D%27372%27%20height%3D%27372%27%20fill%3D%27none%27%20stroke%3D%27%235b4d8a%27%20stroke-width%3D%272%27%20stroke-dasharray%3D%2710%208%27%20rx%3D%2718%27/%3E%0A%3Ccircle%20cx%3D%27200%27%20cy%3D%27150%27%20r%3D%2762%27%20fill%3D%27%23463a73%27/%3E%0A%3Cpath%20d%3D%27M86%20364%20C86%20256%20314%20256%20314%20364%20Z%27%20fill%3D%27%23463a73%27/%3E%0A%3Ctext%20x%3D%27200%27%20y%3D%27340%27%20font-family%3D%27monospace%27%20font-size%3D%2720%27%20fill%3D%27%23E8A33D%27%20text-anchor%3D%27middle%27%3EYOUR%20PHOTO%3C/text%3E%0A%3C/svg%3E';"></span> <span class="file">Talha jubayer</span></a>
+    <nav class="tabs" id="navTabs">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Work</a>
+      <a href="#resume">Resume</a>
+      <a href="#blog">Blog</a>
+      <a href="#contacts">Contact</a>
+    </nav>
+    <div class="topbar-cta">
+      <a href="#contacts" class="btn btn-primary" style="padding:11px 20px;">Hire me</a>
+      <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="#home" class="logo"><span class="tag">{ }</span> portfolio.tsx</a>
+    <button class="menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#portfolio">Work</a>
+  <a href="#resume">Resume</a>
+  <a href="#blog">Blog</a>
+  <a href="#contacts">Contact</a>
+  <a href="#contacts" class="btn btn-primary">Hire me</a>
+</div>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Welcome to my world</div>
+        <h1>Hi, I'm Talha Jubayer —<br>a <em>Designer</em> &amp; <em>Developer</em><span class="cursor"></span></h1>
+        <p class="hero-role">&gt; Product Design · Frontend Engineering · Brand Systems</p>
+        <p class="bio">I build interfaces that feel obvious in hindsight — clean systems, considered motion, and code that doesn't get in the way of the idea. Based in Bangladesh, working with teams everywhere.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> View my work</a>
+          <a href="#contacts" class="btn btn-ghost"><i class="fa-regular fa-paper-plane"></i> Let's talk</a>
+        </div>
+        <div class="hero-social">
+          <!-- EDIT-SOCIAL -->
+          <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-dribbble"></i></a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="hero-top-row">
+          <div class="code-card">
+            <div class="code-card-top">
+              <span></span><span></span><span></span>
+              <small>profile.json</small>
+            </div>
+            <div class="code-card-body">
+              <div>&#123;</div>
+              <div>&nbsp;&nbsp;<span class="k">"name"</span>: <span class="s">"Talha Jubayer"</span>,</div>
+              <div>&nbsp;&nbsp;<span class="k">"role"</span>: <span class="s">"Designer & Developer"</span>,</div>
+              <div>&nbsp;&nbsp;<span class="k">"location"</span>: <span class="s">"Rangpur, BD"</span>,</div>
+              <div>&nbsp;&nbsp;<span class="k">"experience"</span>: <span class="n">5</span>, <span class="c">// years</span></div>
+              <div>&nbsp;&nbsp;<span class="k">"available"</span>: <span class="n">true</span></div>
+              <div>&#125;</div>
+            </div>
+          </div>
+
+          <!-- EDIT-PHOTO: এখানে নিজের ছবি বসাতে চাইলে এই ফোল্ডারে
+               "profile-photo.jpg" নামে একটা ছবি রাখুন — অটোমেটিক বসে যাবে।
+               অন্য নাম/ফরম্যাট ব্যবহার করলে নিচের src="profile-photo.jpg"
+               বদলে আপনার ফাইলের নাম দিন (যেমন src="my-photo.png")। -->
+          <div class="photo-card">
+            <img src="profile-photo.jpg" alt="Talha Jubayer"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20400%27%3E%0A%3Crect%20width%3D%27400%27%20height%3D%27400%27%20fill%3D%27%232B2249%27/%3E%0A%3Crect%20x%3D%2714%27%20y%3D%2714%27%20width%3D%27372%27%20height%3D%27372%27%20fill%3D%27none%27%20stroke%3D%27%235b4d8a%27%20stroke-width%3D%272%27%20stroke-dasharray%3D%2710%208%27%20rx%3D%2718%27/%3E%0A%3Ccircle%20cx%3D%27200%27%20cy%3D%27150%27%20r%3D%2762%27%20fill%3D%27%23463a73%27/%3E%0A%3Cpath%20d%3D%27M86%20364%20C86%20256%20314%20256%20314%20364%20Z%27%20fill%3D%27%23463a73%27/%3E%0A%3Ctext%20x%3D%27200%27%20y%3D%27340%27%20font-family%3D%27monospace%27%20font-size%3D%2720%27%20fill%3D%27%23E8A33D%27%20text-anchor%3D%27middle%27%3EYOUR%20PHOTO%3C/text%3E%0A%3C/svg%3E';">
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><strong>120+</strong><span>Projects</span></div>
+          <div class="stat"><strong>40+</strong><span>Clients</span></div>
+          <div class="stat"><strong>5</strong><span>Yrs Exp</span></div>
+        </div>
+        <div class="status-pill"><span class="pulse"></span> Available for freelance — max 2 hrs/day</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <img src="profile-photo.jpg" alt="Talha Jubayer">
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">About me</div>
+        <h2 class="section-head" style="margin-bottom:0;">Designing and building <em>digital products</em> end to end</h2>
+        <p style="color:var(--paper-dim);margin-top:18px;max-width:560px;">I'm a product designer turned frontend developer — I like owning a problem from the first sketch to the shipped pixel. Over the last 5 years I've worked with startups and agencies to design and build interfaces that are fast, accessible, and genuinely pleasant to use.</p>
+        <div class="about-facts">
+          <div class="fact"><span>Based in</span><strong>Rangpur, Bangladesh</strong></div>
+          <div class="fact"><span>Experience</span><strong>5+ Years</strong></div>
+          <div class="fact"><span>Email</span><strong style="font-size:13px;">talhajubayertaj90@gmail.com</strong></div>
+          <div class="fact"><span>Status</span><strong style="color:var(--mint);">Available now</strong></div>
+        </div>
+        <div class="skill-badges">
+          <span>Figma</span><span>React</span><span>TypeScript</span><span>Webflow</span><span>Next.js</span><span>UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Features</div>
+        <h2>What I <em>do</em> best</h2>
+        <p>A mix of design thinking and engineering discipline — here's where I usually add the most value.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal"><div class="num">01</div><div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div><h3>Web Development</h3><p>Fast, accessible, responsive websites built with modern frameworks and clean code.</p></div>
+        <div class="service-card reveal"><div class="num">02</div><div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div><h3>UI/UX Design</h3><p>Interfaces designed around real user behaviour, not just trends — wireframe to prototype.</p></div>
+        <div class="service-card reveal"><div class="num">03</div><div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div><h3>Mobile App Design</h3><p>Pixel-perfect mobile experiences for iOS and Android, designed mobile-first.</p></div>
+        <div class="service-card reveal"><div class="num">04</div><div class="service-icon"><i class="fa-solid fa-chart-line"></i></div><h3>SEO Optimisation</h3><p>Technical and on-page SEO so the work you ship actually gets found.</p></div>
+        <div class="service-card reveal"><div class="num">05</div><div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>Brand Strategy</h3><p>Positioning, voice and visual identity that makes a product instantly recognisable.</p></div>
+        <div class="service-card reveal"><div class="num">06</div><div class="service-icon"><i class="fa-solid fa-plug"></i></div><h3>API Integration</h3><p>Connecting frontend experiences to the data and services that power them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTFOLIO ================= -->
+  <section class="section" id="portfolio" style="background:var(--ink-2);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Portfolio</div>
+        <h2>Selected <em>work</em></h2>
+        <p>A few recent projects across web, app and brand design. Replace these with your own case studies.</p>
+      </div>
+
+      <div class="filter-row reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="app">App</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="brand">Branding</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- EDIT-PROJECT -->
+        <div class="proj-card reveal" data-cat="app">
+          <div class="cover c1"><span class="tag-cat">App Design</span></div>
+          <div class="proj-meta"><h4>NFT Dashboard Application</h4><p>UI/UX · Web App</p></div>
+        </div>
+        <div class="proj-card reveal" data-cat="app">
+          <div class="cover c2"><span class="tag-cat">Mobile App</span></div>
+          <div class="proj-meta"><h4>Travel App Design & Build</h4><p>Mobile · Figma to React</p></div>
+        </div>
+        <div class="proj-card reveal" data-cat="web">
+          <div class="cover c3"><span class="tag-cat">Web Design</span></div>
+          <div class="proj-meta"><h4>Workout Website Platform</h4><p>Frontend · CMS</p></div>
+        </div>
+        <div class="proj-card reveal" data-cat="design">
+          <div class="cover c4"><span class="tag-cat">Landing Page</span></div>
+          <div class="proj-meta"><h4>Mobile App Landing Page</h4><p>UI Design · Marketing</p></div>
+        </div>
+        <div class="proj-card reveal" data-cat="brand">
+          <div class="cover c5"><span class="tag-cat">Branding</span></div>
+          <div class="proj-meta"><h4>Restaurant Brand Identity</h4><p>Logo · Brand System</p></div>
+        </div>
+        <div class="proj-card reveal" data-cat="web">
+          <div class="cover c6"><span class="tag-cat">Web App</span></div>
+          <div class="proj-meta"><h4>Food Delivery Web Platform</h4><p>Frontend · Full Build</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section class="section resume" id="resume">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">7+ Years of experience</div>
+        <h2>My <em>resume</em></h2>
+        <p>Education, experience and the skills I've picked up along the way.</p>
+      </div>
+
+      <div class="resume-tabs reveal">
+        <button class="r-tab active" data-tab="edu">Education</button>
+        <button class="r-tab" data-tab="exp">Experience</button>
+        <button class="r-tab" data-tab="skill">Skills</button>
+      </div>
+
+      <div class="r-panel active" id="edu">
+        <div class="timeline">
+          <div class="t-item"><span class="t-date">2018 — 2022</span><h4>BSc in Computer Science</h4><div class="t-org">University of Rajshahi</div><p>Focused on human-computer interaction, web technologies and software engineering fundamentals.</p></div>
+          <div class="t-item"><span class="t-date">2016 — 2018</span><h4>Higher Secondary, Science</h4><div class="t-org">Rangpur Govt. College</div><p>Built the first portfolio site and started freelancing in design while finishing school.</p></div>
+          <div class="t-item"><span class="t-date">2014 — 2016</span><h4>Secondary School Certificate</h4><div class="t-org">Carmichael Collegiate School</div><p>First introduction to programming through extracurricular robotics and coding club.</p></div>
+        </div>
+      </div>
+
+      <div class="r-panel" id="exp">
+        <div class="timeline">
+          <div class="t-item"><span class="t-date">2022 — Present</span><h4>Senior Product Designer</h4><div class="t-org">Freelance / Remote</div><p>Leading design and frontend builds for SaaS and e-commerce clients across the US and EU.</p></div>
+          <div class="t-item"><span class="t-date">2020 — 2022</span><h4>UI/UX Designer</h4><div class="t-org">Pixel Studio, Dhaka</div><p>Designed and shipped 30+ web and mobile interfaces for agency clients.</p></div>
+          <div class="t-item"><span class="t-date">2019 — 2020</span><h4>Junior Frontend Developer</h4><div class="t-org">Webnest Ltd.</div><p>Built and maintained responsive marketing sites and internal tools.</p></div>
+        </div>
+      </div>
+
+      <div class="r-panel" id="skill">
+        <div class="skills-cols">
+          <div>
+            <h4 style="font-family:var(--font-mono);color:var(--muted);text-transform:uppercase;font-size:12.5px;margin-bottom:24px;">Design</h4>
+            <!-- EDIT-SKILL -->
+            <div class="skill-bar"><div class="sb-top"><span>Figma</span><span>95%</span></div><div class="sb-track"><div class="sb-fill" data-w="95"></div></div></div>
+            <div class="skill-bar"><div class="sb-top"><span>UI/UX Design</span><span>90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
+            <div class="skill-bar"><div class="sb-top"><span>Adobe XD</span><span>75%</span></div><div class="sb-track"><div class="sb-fill" data-w="75"></div></div></div>
+            <div class="skill-bar"><div class="sb-top"><span>Brand Design</span><span>80%</span></div><div class="sb-track"><div class="sb-fill" data-w="80"></div></div></div>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-mono);color:var(--muted);text-transform:uppercase;font-size:12.5px;margin-bottom:24px;">Development</h4>
+            <div class="skill-bar"><div class="sb-top"><span>HTML / CSS</span><span>97%</span></div><div class="sb-track"><div class="sb-fill" data-w="97"></div></div></div>
+            <div class="skill-bar"><div class="sb-top"><span>JavaScript</span><span>85%</span></div><div class="sb-track"><div class="sb-fill" data-w="85"></div></div></div>
+            <div class="skill-bar"><div class="sb-top"><span>React / Next.js</span><span>80%</span></div><div class="sb-track"><div class="sb-fill" data-w="80"></div></div></div>
+            <div class="skill-bar"><div class="sb-top"><span>WordPress</span><span>70%</span></div><div class="sb-track"><div class="sb-fill" data-w="70"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="section" id="testimonial">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">What clients say</div>
+        <h2>Kind <em>words</em></h2>
+      </div>
+      <div class="testi-wrap reveal">
+        <div class="testi-slide active">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Talha turned a messy set of requirements into a clean, fast product in a few weeks. Communication was excellent throughout."</p>
+          <div class="testi-person"><div class="testi-avatar">NA</div><div class="info"><h5>Nevine Acotanza</h5><span>COO, Upwork client</span></div></div>
+        </div>
+        <div class="testi-slide">
+          <div class="testi-stars">★★★★★</div>
+          <p>"One of the rare designers who can also ship production code. Our travel app's design and build both came from him."</p>
+          <div class="testi-person"><div class="testi-avatar">CD</div><div class="info"><h5>Cara Delevingne</h5><span>Founder, Travel startup</span></div></div>
+        </div>
+        <div class="testi-slide">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Reliable, fast and genuinely good taste. We've brought him back for three projects in a row now."</p>
+          <div class="testi-person"><div class="testi-avatar">JD</div><div class="info"><h5>Jone Duone</h5><span>Operating Officer, Bound</span></div></div>
+        </div>
+        <div class="testi-dots">
+          <button class="active" data-i="0"></button><button data-i="1"></button><button data-i="2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLIENTS ================= -->
+  <section class="clients" id="clients">
+    <div class="wrap" style="margin-bottom:24px;">
+      <div class="eyebrow" style="justify-content:center;">Popular clients</div>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track" id="marqueeTrack">
+        <span><i class="fa-solid fa-star"></i>Nimbus Labs</span>
+        <span><i class="fa-solid fa-star"></i>Northwind Co.</span>
+        <span><i class="fa-solid fa-star"></i>Quanta Studio</span>
+        <span><i class="fa-solid fa-star"></i>Verdant Inc.</span>
+        <span><i class="fa-solid fa-star"></i>Hollow & Pine</span>
+        <span><i class="fa-solid fa-star"></i>Cobalt Group</span>
+        <span><i class="fa-solid fa-star"></i>Nimbus Labs</span>
+        <span><i class="fa-solid fa-star"></i>Northwind Co.</span>
+        <span><i class="fa-solid fa-star"></i>Quanta Studio</span>
+        <span><i class="fa-solid fa-star"></i>Verdant Inc.</span>
+        <span><i class="fa-solid fa-star"></i>Hollow & Pine</span>
+        <span><i class="fa-solid fa-star"></i>Cobalt Group</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BLOG ================= -->
+  <section class="section" id="blog">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Blog</div>
+        <h2>Latest <em>writing</em></h2>
+        <p>Notes on design, frontend engineering and the occasional rant about CSS.</p>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="blog-cover c1"><span class="b-tag">Design</span></div>
+          <div class="blog-meta"><div class="b-date">12 Mar 2026 · 4 min read</div><h4>Designing systems, not screens</h4><p>Why thinking in components beats thinking in pages, and how to start.</p><span class="read-more">Read more →</span></div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-cover c2"><span class="b-tag">Frontend</span></div>
+          <div class="blog-meta"><div class="b-date">28 Feb 2026 · 6 min read</div><h4>Performance budgets that actually stick</h4><p>A practical way to keep a fast site fast as the team grows.</p><span class="read-more">Read more →</span></div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-cover c3"><span class="b-tag">Career</span></div>
+          <div class="blog-meta"><div class="b-date">15 Jan 2026 · 5 min read</div><h4>Going from designer to developer</h4><p>What changed in how I work after I started shipping my own code.</p><span class="read-more">Read more →</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contacts">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <div class="eyebrow">Contact</div>
+        <h2 class="section-head" style="margin-bottom:30px;">Let's build something <em>together</em></h2>
+        <!-- EDIT-CONTACT -->
+        <div class="c-info-item"><div class="ic"><i class="fa-solid fa-envelope"></i></div><div><span>Email</span><strong>talhajubayertaj90@gmail.com</strong></div></div>
+        <div class="c-info-item"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><span>Phone</span><strong>+880 1617104900</strong></div></div>
+        <div class="c-info-item"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><span>Location</span><strong>Rangpur, Bangladesh</strong></div></div>
+        <div class="hero-social" style="margin-top:30px;">
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="form-grid" id="contactForm">
+          <div class="field"><label>Your name</label><input type="text" required placeholder="Talha Jubayer"></div>
+          <div class="field"><label>Email</label><input type="email" required placeholder="talhajubayertaj90@gmail.com"></div>
+          <div class="field full"><label>Subject</label><input type="text" required placeholder="Project inquiry"></div>
+          <div class="field full"><label>Message</label><textarea required placeholder="Tell me about your project..."></textarea></div>
+          <div class="full">
+            <button type="submit" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Send message</button>
+            <div class="form-note" id="formNote"><i class="fa-solid fa-circle-check"></i> Message sent — I'll reply within 24 hours.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="profile-photo.jpg" alt="Talha Jubayer">
+        <p style="color:var(--paper-dim);margin-top:16px;font-size:14px;max-width:260px;">Product designer & frontend developer crafting clean, considered digital experiences.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul><li><a href="#about">About</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#resume">Resume</a></li><li><a href="#contacts">Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul><li><a href="#features">Web Development</a></li><li><a href="#features">UI/UX Design</a></li><li><a href="#features">Branding</a></li></ul>
+      </div>
+      <div>
+        <h5>Newsletter</h5>
+        <p style="color:var(--paper-dim);font-size:13.5px;margin-bottom:14px;">Occasional notes on design & code.</p>
+        <div class="field"><input type="email" placeholder="talhajubayertaj90@gmail.com"></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Talha Jubayer. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
